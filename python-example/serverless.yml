@@ -1,0 +1,15 @@
+org: tanu31195
+app: python-example
+service: python-example
+
+frameworkVersion: '2 || 3'
+
+
+provider:
+  name: aws
+  runtime: python3.8
+  lambdaHashingVersion: 20201221
+
+functions:
+  hello:
+    handler: handler.hello
