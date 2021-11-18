@@ -26,6 +26,8 @@ provider:
   lambdaHashingVersion: 20201221
   profile: serverless-admin
   region: ap-southeast-1
+  memorySize: 128
+  timeout: 2
 
 # you can overwrite defaults here
 #  stage: dev
@@ -60,8 +62,12 @@ provider:
 #    - include-me-dir/**
 
 functions:
-  hello:
+  hello-short-timeout:
     handler: handler.hello
+  hello-long-timeout:
+    handler: handler.hello
+    memorySize: 256
+    timeout: 6
 #    The following are a few example events you can configure
 #    NOTE: Please make sure to change your handler code to work with those events
 #    Check the event documentation for details

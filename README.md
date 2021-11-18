@@ -68,7 +68,9 @@ Add to serverless.yml
 Deploy all, the stack(initial and if stack is updated)
 `sls deploy`
 Verbose mode
-`sls deploy -v`
+`sls deploy -v` 
+-v will be deprecated so use --verbose
+`sls deploy --verbose`
 
 Deploy function only(if only function changes are done)
 `sls deploy function -f hello`
@@ -84,3 +86,33 @@ Fetch logs(Invoke from new cli)
 
 Remove the all
 `sls remove`
+
+`sls create --template aws-nodejs --path nodejs-example`
+`sls create --template aws-java-maven --path java-maven-example`
+
+<https://app.serverless.com/tanu31195/apps/python-example/python-example/dev/us-east-1/interact>
+
+## YAML
+
+Markup language used to edit serverless.yml
+Key value pairs
+Nested Objects
+Support Arrays ( - one index of array)
+Multi line strings ( | is used)
+( --- ) is used to show beginning of yml file
+Multi lines with ( > ) will consider as single line
+
+### Functions timeout and memory
+
+    functions:
+      hello-short-timeout:
+        handler: handler.hello
+        memorySize: 128
+        timeout: 3
+      hello-long-timeout:
+        handler: handler.hello
+        memorySize: 256
+        timeout: 6
+
+Depending on function invocation duration(can be checked from Monitor tab) timeout can be changed
+Memory can be set at the top level in provider block they will be applied to all functions except if they have defined in function
