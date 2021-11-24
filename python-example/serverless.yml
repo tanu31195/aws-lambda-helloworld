@@ -9,6 +9,8 @@ provider:
   name: aws
   runtime: python3.8
   lambdaHashingVersion: 20201221
+  profile: serverless-admin
+  region: ap-southeast-1
 
 functions:
   hello:
