@@ -141,3 +141,8 @@ Below configuration allows any action on lambda namespace for any resource
 Allows to provide external configurations
 Can change function behavior without any code changes
 Can have environment variables that can affect all functions(provider level) or can add to individual function level
+
+    hello-env-tan:
+      handler: handler.hello
+      environment:
+        FIRST_NAME: 'tan'
