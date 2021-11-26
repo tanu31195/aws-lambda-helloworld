@@ -146,3 +146,27 @@ Can have environment variables that can affect all functions(provider level) or 
       handler: handler.hello
       environment:
         FIRST_NAME: 'tan'
+
+#### VPC (Virtual Private Cloud)
+
+Can create private networks
+Allows to privately deploy
+Can configure lambda functions to only be accessed within private network
+Can assign security groups to lambda functions
+Can securely access EC2 and RD2 instances with the VPC
+VPC is made up of subnets which are assigned to availability zones(regions)
+Can choose which subnets to deploy lambda functions
+Can be set at provider or function level
+
+    vpc:
+      securityGroupIds:
+        - sg-02a54479ad6645609
+      subnetIds:
+        - subnet-0830624db322f44cc
+        - subnet-095b8b4ce7c54170f
+
+securityGroupIds: VPC > Security > Security Groups (can  create new groups)
+subnetIds: VPC > Subnets
+
+When creating using serverless it will automatically attach the managed policy to the lambda role
+So it allows the lambda function to work within the VPC
