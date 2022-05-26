@@ -170,5 +170,3 @@ subnetIds: VPC > Subnets
 
 When creating using serverless it will automatically attach the managed policy to the lambda role
 So it allows the lambda function to work within the VPC
-
-test
